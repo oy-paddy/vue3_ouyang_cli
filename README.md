@@ -18,7 +18,10 @@ npm i -D unplugin-vue-components
 
 # 5.vite.config导入文件报红
 > 在tsconfig.node.json文件中把报红的文件添加到include中
-
+```
+//tsconfig.node.json文件
+ "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "auto-import.ts"],
+```
 
 # 6.安装scss
 ```
@@ -117,3 +120,17 @@ const plugins = [vue(), vueSetupExtend(), vueJsx(), visualizer()]
 
 # 13.在Tailwind CSS 3/ Vue 3中无法使用动态任意值
 
+# 14.搭建自己脚手架，用degit获取模板
+> git不push空的文件夹
+- 关联远程仓库，其中github是remote的代名，可以随便取。例子： git remote add github https://github.com/oy-paddy/vue3_ouyang_cli.git
+- 首次可以强行推送覆盖：git push -f github main
+- degit获取模板：degit https://github.com/oy-paddy/vue3_ouyang_cli.git vue_router_animation
+
+# 15.Vue——组件命名报错 “Component name “XXX“ should always be multi-word”的解决方法
+```
+在根目录下，打开【.eslintrc.js】文件，如果没有，就新建，内容
+  rules: {
+    //关闭组件命名规则
+    "vue/multi-word-component-names": "off",
+  },
+```
