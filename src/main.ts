@@ -10,7 +10,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-console.log('main环境配置=',import.meta)
+console.log('main环境配置=',import.meta.env)
 const app = createApp(App)
 
 app.use(createPinia())
