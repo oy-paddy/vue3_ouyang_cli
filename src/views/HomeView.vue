@@ -13,7 +13,7 @@ import { publicData } from "@/composables/useData";
         使用unocss后自动转换为rem
       </div>
       <div
-        style="width: 200px;height: 50px;line-height: 50px;box-sizing: border-box;border: 1px solid green;margin-bottom: 2px;margin-top: 2px;">
+        style="width: 200px;height: 50px;font-size: 13px;line-height: 50px;box-sizing: border-box;border: 1px solid green;margin-bottom: 2px;margin-top: 2px;">
         内联style不转化rem(200x50)</div>
       <div class="div-box" style="border: 1px solid red;">class自动转换为rem:(199.9x49.9)</div>
     </div>
