@@ -134,3 +134,78 @@ const plugins = [vue(), vueSetupExtend(), vueJsx(), visualizer()]
     "vue/multi-word-component-names": "off",
   },
 ```
+
+
+# 16.解决defineProps报错
+在.eslintrc.cjs文件中添加
+ env: {
+        node: true,
+        "vue/setup-compiler-macros": true,
+    },
+
+
+# 17.引入unocss重置样式
+// 导入样式重置，其中@unocss/reset目录下还有几种，我感觉下面这个好用
+import '@unocss/reset/tailwind.css'
+
+# 18.unocss使用组合样式
+UnoCSS transformer for @apply, @screen and theme() directives: @unocss/transformer-directives.
+
+```
+安装：yarn add -D @unocss/transformer-directives
+
+// uno.config.ts
+import { defineConfig } from 'unocss'
+import transformerDirectives from '@unocss/transformer-directives'
+
+export default defineConfig({
+  // ...
+  transformers: [
+    transformerDirectives(),
+  ],
+})
+```
+
+# 19.前端适配
+## 19.1.前端适配方案
+> 推荐和原子化插件 unocss或者tailwindcss 一起使用
+- [postcss-px-to-viewport vw适配方案](https://juejin.cn/post/7228978346503225402)
+- [lib-flexible&postcss-pxtorem px-rem适配方案](https://juejin.cn/post/7057350246560940062)
+
+## 19.2.postcss-px-to-viewport插件使用
+- 安装：npm install postcss-px-to-viewport --save-dev
+```
+//在vite.config.ts中
+import pxtovw from "postcss-px-to-viewport" 
+const loader_pxtovw = pxtovw({
+  unitToConvert: 'px', // 要转化的单位
+  viewportWidth: 750, // UI设计稿的宽度
+  unitPrecision: 6, // 转换后的精度，即小数点位数
+  propList: ['*'], // 指定转换的css属性的单位，*代表全部css属性的单位都进行转换
+  viewportUnit: 'vw', // 指定需要转换成的视窗单位，默认vw
+  fontViewportUnit: 'vw', // 指定字体需要转换成的视窗单位，默认vw
+  selectorBlackList: ['ignore-'], // 指定不转换为视窗单位的类名，
+  minPixelValue: 1, // 默认值1，小于或等于1px则不进行转换
+  mediaQuery: true, // 是否在媒体查询的css代码中也进行转换，默认false
+  replace: true, // 是否转换后直接更换属性值
+  // exclude: [/node_modules/], // 设置忽略文件，用正则做目录名匹配
+  landscape: false // 是否处理横屏情况
+})
+```
+- 安装scss:npm install node-sass sass-loader sass -D
+
+## 19.3.lib-flexible&postcss-pxtorem
+> postcss-px-to-viewport 插件
+- 工具一：lib-flexible —— 用于自动设置 rem 基准值(也就是html上的font-size)
+- 工具二：postcss-pxtorem —— 是一款 postcss 插件，用于将px单位转化为 rem
+- 安装：npm i amfe-flexible -D
+- 安装：npm i postcss-pxtorem -D
+- 安装（自动管理浏览器前缀）：npm install autoprefixer --save  
+- [参考配置](https://unocss.dev/presets/rem-to-px#installation)如果使用了unocss，需要把自带的rem转换为px，在通过postcss-pxtorem转换为rem：npm install -D @unocss/preset-rem-to-px
+
+## 19.4.按需导入
+- 安装：npm i unplugin-vue-components -D
+
+## 19.5.vant适配vw
+>问题：因为设计稿是750，但是vant的设计稿是375，所以导致转换会有问题。[解决方案](https://juejin.cn/post/6961737808339795975)如下：
+- npm i vite-plugin-style-import -D
