@@ -1,32 +1,44 @@
 <script lang="ts" setup>
 import { listData } from "../composables/useData"
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 let selectIndex = ref(0)
-let navTitles = ref(['首页', '动画', '番剧', '国创', '音乐', '舞蹈', '游戏', '科技', '数码', '生活', '鬼畜', '时尚', '广告', '娱乐', '影视', '纪录片', '电影', '电视剧', '影视', '纪录片', '电影', '电视剧'])
+let navTitles = ref(['首页', '动画', '番剧', '国创', '音乐', '舞蹈', '游戏', '科技', '数码', '生活', '鬼畜', '时尚', '广告', '娱乐', '影视', '纪录片', '电影', '电视剧'])
 
+function toAbout() {
+  router.push('/about')
+}
 
-
+function coverCount(count: number) {
+  if (count > 10000) {
+    return (count / 10000).toFixed(1) + '万'
+  } else {
+    return count
+  }
+}
 
 </script>
 
 <template>
   <div class="bilibili text-xl">
     <!-- 顶部导航栏 -->
-    <div
+    <div @click="toAbout"
       class="w-full h-[88px] fixed top-0 left-0 z-50 bg-white pl-[36px] pr-[36px] flex flex-row items-center justify-between">
       <img src="../assets/BILIBILI_LOGO.png" class="h-[56px] w-auto" alt="">
       <!-- 右侧 -->
       <div class="flex flex-row flex-nowrap items-center">
-        <span class="i-uiw:search mr-10" color="gray" style="font-size: 20px;"></span>
+        <span class="i-uiw:search mr-10 text-[40px]" color="gray"></span>
         <img src="../assets/head.jpeg" class="w-[48px] h-[48px] rounded-full mr-10" alt="">
         <button class="p-4 rounded-xl text-white bg-red-700">下载App</button>
       </div>
     </div>
 
     <!-- 横向滚动 -->
-    <div class="w-full border-b-1 fixed top-[88px] left-0 z-20 bg-white">
+    <div class="w-full border-b fixed top-[88px] left-0 z-20 bg-white">
       <div class="p-x-5 w-full flex flex-row flex-nowrap overflow-x-scroll">
         <span @click="selectIndex = idx"
-          :class="['pl-3 pr-3 h-15 leading-15 whitespace-nowrap', selectIndex == idx ? 'border-b border-red-500 text-red' : 'text-[#808080]']"
+          :class="['pl-3 pr-3 h-15 leading-15 whitespace-nowrap', selectIndex == idx ? 'border-b-4 border-red-500 text-red' : 'text-[#808080]']"
           v-for="i, idx in navTitles" :key="idx">{{ i }}</span>
       </div>
     </div>
@@ -35,20 +47,18 @@ let navTitles = ref(['首页', '动画', '番剧', '国创', '音乐', '舞蹈',
     <div class="flex flex-row flex-wrap justify-evenly p-x-5 mt-40">
       <div class="flex flex-col w-[344px] pt-[16px] pb-[16px]" v-for="video_ in listData" :key="video_.aid">
         <div class="w-full relative">
-          <img class="w-full h-[194px] rounded"
-            :src="video_.pic" referrerPolicy="no-referrer"
-            alt="" />
+          <img class="w-full h-[194px] rounded" :src="video_.pic" referrerPolicy="no-referrer" alt="" />
 
           <div
-            class="absolute w-full left-0 bottom-0 pl-[12px] pr-[12px] pt-[10px] pb-[10px] text-white flex flex-row items-center justify-between">
+            class="absolute w-full bg-gray-800:20 filter left-0 bottom-0 pl-[12px] pr-[12px] pt-[10px] pb-[10px] text-white flex flex-row items-center justify-between">
             <div class="font-normal flex items-center">
               <span class="i-uiw:play-circle-o mr-2" color="white" style=""></span>
-              <span>{{ video_.stat.view }}</span>
+              <span>{{ coverCount(video_.stat.view) }}</span>
             </div>
 
             <div class="font-normal flex items-center">
               <span class="i-uiw-menu mr-2" color="white"></span>
-              <span>{{ video_.stat.share }}</span>
+              <span>{{ coverCount(video_.stat.share) }}</span>
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ import postCssPxToRem from 'postcss-pxtorem'
 import pxtovw from "postcss-px-to-viewport"
 
 // 是否使用vw方案，false:使用rem方案；true:使用vw方案
-const useVwModel = true
+const useVwModel = false
 
 // https://vitejs.dev/config/
 export default defineConfig({
