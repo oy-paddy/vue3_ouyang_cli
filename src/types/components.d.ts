@@ -7,7 +7,10 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    BiliBili: typeof import('./../components/BiliBili.vue')['default']
+    Box: typeof import('./../components/Box.vue')['default']
     Hello: typeof import('./../components/Hello.vue')['default']
+    ResponsiveBox: typeof import('./../components/ResponsiveBox.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

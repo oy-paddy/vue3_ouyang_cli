@@ -12,6 +12,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@iconify-json/uiw": "^1.1.7",
     "@vueuse/core": "^10.2.1",
     "pinia": "^2.1.3",
     "vue": "^3.3.4",
@@ -24,6 +25,7 @@
     "@tsconfig/node18": "^2.0.1",
     "@types/jsdom": "^21.1.1",
     "@types/node": "^18.16.17",
+    "@types/postcss-pxtorem": "^6.0.0",
     "@unocss/preset-attributify": "^0.53.4",
     "@unocss/preset-icons": "^0.53.4",
     "@unocss/preset-rem-to-px": "^0.53.4",

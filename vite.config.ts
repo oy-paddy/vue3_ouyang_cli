@@ -15,7 +15,7 @@ import UnoCSS from 'unocss/vite'
 
 // 自动管理浏览器前缀
 import autoprefixer from 'autoprefixer'
-// rem方案（转换后会有0.1px的像素差）：css自动转换为rem，切记需要再main.js中 import 'amfe-flexible' 自动设置基准值
+// rem方案（部分转换后会有0.1px的像素差）：css自动转换为rem，切记需要再main.js中 import 'amfe-flexible' 自动设置基准值
 import postCssPxToRem from 'postcss-pxtorem'
 
 // vw方案（无像素差）：px自动转换vw
