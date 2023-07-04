@@ -21,7 +21,7 @@ import postCssPxToRem from 'postcss-pxtorem'
 // vw方案（无像素差）：px自动转换vw
 import pxtovw from "postcss-px-to-viewport"
 
-// 解决vant375设计稿适配问题
+// vw方案（无像素差）：pxtovw不能动态传值，这个px2vp可以解决vant375设计稿适配问题
 import px2vp from 'postcss-px2vp';
 
 // 是否使用vw方案，false:使用rem方案；true:使用vw方案
