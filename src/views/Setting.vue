@@ -8,7 +8,7 @@ function toLogin(){
 
 <template>
   <div class="">
-    <button @click="toLogin">去登录</button>
+    <van-cell title="设置" is-link  @click="toLogin"/>
   </div>
 </template>
 

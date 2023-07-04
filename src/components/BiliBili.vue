@@ -48,16 +48,16 @@ function coverCount(count: number) {
     <!-- 横向滚动 -->
     <div class="w-full border-b fixed top-[88px] left-0 z-20 bg-white">
       <div ref="scrollTitle" class="p-x-5 w-full flex flex-row flex-nowrap overflow-x-scroll">
-        <span @click="toIndex($event, idx)" :class="['pl-3 pr-3 h-15 leading-15 whitespace-nowrap',
+        <span @click="toIndex($event, idx)" :class="['pl-3 pr-3 h-15 text-3xl  leading-15 whitespace-nowrap',
           selectIndex == idx ?
             'border-b-4 border-red-500 text-red transition duration-300' :
-            'text-[#808080]']" v-for="i, idx in navTitles" :key="idx">{{ i }}</span>
+            'text-[#808080] ']" v-for="i, idx in navTitles" :key="idx">{{ i }}</span>
       </div>
     </div>
 
     <!-- 视频区域 -->
     <div class="flex flex-row flex-wrap justify-evenly p-x-5 mt-40">
-      <div class="flex flex-col w-[344px] pt-[16px] pb-[16px]" v-for="video_ in listData" :key="video_.aid">
+      <div class="flex flex-col w-86 pt-4 pb-4" v-for="video_ in listData" :key="video_.aid">
         <div class="w-full relative">
           <img class="w-full h-[194px] rounded" :src="video_.pic" referrerPolicy="no-referrer" alt="" />
 
@@ -74,7 +74,7 @@ function coverCount(count: number) {
             </div>
           </div>
         </div>
-        <span class="mt-[12px] text-dark-50 text-lg">{{ video_.title }}</span>
+        <span class="mt-[12px] text-dark-50 text-2xl">{{ video_.title }}</span>
       </div>
     </div>
 

@@ -25,7 +25,7 @@ const router = createRouter({
           // which is lazy-loaded when the route is visited.
           component: () => import('../views/AboutView.vue'),
           meta: {
-            title: '关于',
+            title: '签到',
             keepAlive: true,
           },
         },
@@ -37,7 +37,7 @@ const router = createRouter({
           // which is lazy-loaded when the route is visited.
           component: () => import('@/views/ListView.vue'),
           meta: {
-            title: '列表',
+            title: '测试',
             keepAlive: true,
           },
         },
@@ -65,7 +65,12 @@ const router = createRouter({
       meta: {
         title: '登录',
       },
-    }
+    },
+    {
+      // 找不到路由重定向到404页面
+      path: '/:pathMatch(.*)',
+      redirect: '/home',
+    },
 
   ]
 })

@@ -2,7 +2,7 @@
   <template v-if="$route.meta.title">
     <van-nav-bar :title="$route.meta.title" :left-arrow="!tabbarVisible" @click-left="goBack" />
   </template>
-  <div class="main-page" :class="{ tabbar: tabbarVisible, border: showBorder }">
+  <div class="main-page" :class="{ tabbar: tabbarVisible}">
     <RouterView v-slot="{ Component }" v-if="$route.meta.keepAlive">
       <keep-alive>
         <component :is="Component" :key="$route.path" />
@@ -21,8 +21,8 @@ import { useRouter } from 'vue-router';
 import { ref, watch } from "vue"
 const tabItem = [
   { key: '首页', icon: 'home-o',path:"/home" },
-  { key: '关于', icon: 'search',path:"/about" },
-  { key: '列表', icon: 'friends-o',path:"/list"  },
+  { key: '签到', icon: 'search',path:"/about" },
+  { key: '测试', icon: 'friends-o',path:"/list"  },
   { key: '设置', icon: 'setting-o',path:"/setting"  },
 ];
 const router = useRouter();
@@ -71,6 +71,7 @@ const goBack = () => {
   height: calc(100vh - 92px);
   overflow-y: scroll;
   overflow-x: hidden;
+  background:rgb(245, 246, 249);
 }
 
 .tabbar {

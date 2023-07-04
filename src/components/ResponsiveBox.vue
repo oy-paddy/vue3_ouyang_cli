@@ -33,7 +33,7 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-col relative text-base">
-    <div class="flex flex-col relative m-2 p-2 border">
+    <div class="flex flex-col relative m-2 p-2 border bg-white">
       <div>{{ width }}:{{ height }}</div>
       <span class="absolute right-2 top-2 text-base text-red">px转换为rem会有像素差，<br />但是px转换为vw没有像素差</span>
       <div ref="el1" class="w-100 h-25 border
