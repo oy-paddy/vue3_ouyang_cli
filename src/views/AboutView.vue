@@ -8,10 +8,4 @@ import { publicData } from "@/composables/useData";
 </template>
 
 <style>
-.base-t{
-  font-size: 37.5px;
-}
-.base-t2{
-  font-size: 16px;
-}
 </style>

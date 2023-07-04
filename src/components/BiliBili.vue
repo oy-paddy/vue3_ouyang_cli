@@ -5,9 +5,20 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 let selectIndex = ref(0)
 let navTitles = ref(['首页', '动画', '番剧', '国创', '音乐', '舞蹈', '游戏', '科技', '数码', '生活', '鬼畜', '时尚', '广告', '娱乐', '影视', '纪录片', '电影', '电视剧'])
+let scrollTitle = ref()
+
+let scrollWidth = computed(() => {
+  return (scrollTitle.value && scrollTitle.value.scrollLeft) || 0
+})
 
 function toAbout() {
   router.push('/about')
+}
+
+function toIndex(e: any, index: number) {
+  selectIndex.value = index
+  // scrollTitle.value.scrollLeft = e.target.offsetLeft - scrollTitle.value.offsetWidth / 2 + e.target.offsetWidth / 2
+  scrollTitle.value.scrollLeft = e.target.offsetLeft  - e.target.offsetWidth * 3
 }
 
 function coverCount(count: number) {
@@ -36,10 +47,11 @@ function coverCount(count: number) {
 
     <!-- 横向滚动 -->
     <div class="w-full border-b fixed top-[88px] left-0 z-20 bg-white">
-      <div class="p-x-5 w-full flex flex-row flex-nowrap overflow-x-scroll">
-        <span @click="selectIndex = idx"
-          :class="['pl-3 pr-3 h-15 leading-15 whitespace-nowrap', selectIndex == idx ? 'border-b-4 border-red-500 text-red' : 'text-[#808080]']"
-          v-for="i, idx in navTitles" :key="idx">{{ i }}</span>
+      <div ref="scrollTitle" class="p-x-5 w-full flex flex-row flex-nowrap overflow-x-scroll">
+        <span @click="toIndex($event, idx)" :class="['pl-3 pr-3 h-15 leading-15 whitespace-nowrap',
+          selectIndex == idx ?
+            'border-b-4 border-red-500 text-red transition duration-300' :
+            'text-[#808080]']" v-for="i, idx in navTitles" :key="idx">{{ i }}</span>
       </div>
     </div>
 
