@@ -13,7 +13,7 @@ let signedId = ref(2)
       </div>
       <img class="absolute right-0 top-0 w-auto h-81.5" src="../assets/sign/day-icon.png" mode="heightFix" />
 
-      <div class="sign-card-wrap">
+      <div class="sign-card-wrap shadow-md">
         <div class="sign-card-top-wrap">
           连续签到3天起即可免费开通题库会员
         </div>
@@ -68,8 +68,9 @@ let signedId = ref(2)
         做任务得积分
       </div>
 
-      <div class="task-menus mb-5 w-175 bg-white ml-6">
-        <div class="task-item-wrap h-32.5 m-x-6 m-y-0 flex items-center jutify-between box-border " v-for="taskItem, idx in taskList" :key="idx">
+      <div class="task-menus mb-5 w-175 bg-white ml-6 shadow-md">
+        <div class="task-item-wrap h-32.5 m-x-6 m-y-0 flex items-center jutify-between box-border "
+          v-for="taskItem, idx in taskList" :key="idx">
           <div class="flex items-center">
             <img :src="taskItem.icon" class="w-20 h-20" mode="" />
             <div class="flex flex-col items-start ml-4">
@@ -81,7 +82,7 @@ let signedId = ref(2)
               </div>
             </div>
           </div>
-          <div :class="['w-30.5 h-14 border border-solid border-[#afafaf]',taskItem.isDone ? 'done-btn' : 'task-btn']">
+          <div :class="['w-30.5 h-14 border border-solid border-[#afafaf]', taskItem.isDone ? 'done-btn' : 'task-btn']">
             {{ taskItem.buttonText }}
           </div>
         </div>
@@ -92,12 +93,16 @@ let signedId = ref(2)
 
 
 <script lang="ts">
+import icon1 from '../assets/sign/practice-icon.png'
+import icon2 from '../assets/sign/study-icon.png'
+import icon3 from '../assets/sign/shoping-icon.png'
+import icon4 from '../assets/sign/invite-icon.png'
 function parsePath(path: string) {
   return new URL(path, import.meta.url).href
 }
 let taskList = ref([{
   id: 0,
-  icon: parsePath('../assets/sign/practice-icon.png'),
+  icon: icon1,
   title: '完成每日一练',
   desc: '完成每日一练可获得',
   score: 10,
@@ -107,7 +112,7 @@ let taskList = ref([{
 },
 {
   id: 1,
-  icon: parsePath('../assets/sign/study-icon.png'),
+  icon: icon2,
   title: '完成听课',
   desc: '每听完一堂课可获得',
   score: 10,
@@ -117,7 +122,7 @@ let taskList = ref([{
 },
 {
   id: 2,
-  icon: parsePath('../assets/sign/shoping-icon.png'),
+  icon: icon3,
   title: '购物返积分',
   desc: '购买后确认收货后可获得',
   score: 15,
@@ -127,7 +132,7 @@ let taskList = ref([{
 },
 {
   id: 3,
-  icon: parsePath('../assets/sign/invite-icon.png'),
+  icon: icon4,
   title: '邀请好友送积分',
   desc: '邀请好友进入小程序获得',
   score: 30,
@@ -536,5 +541,4 @@ let signScoreList = ref([{
     }
   }
 }
-
 </style>

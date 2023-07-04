@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { listData } from "../composables/useData"
 import { useRouter } from 'vue-router'
+import { showToast } from 'vant';
 
 const router = useRouter()
 let selectIndex = ref(0)
@@ -18,7 +19,7 @@ function toAbout() {
 function toIndex(e: any, index: number) {
   selectIndex.value = index
   // scrollTitle.value.scrollLeft = e.target.offsetLeft - scrollTitle.value.offsetWidth / 2 + e.target.offsetWidth / 2
-  scrollTitle.value.scrollLeft = e.target.offsetLeft  - e.target.offsetWidth * 3
+  scrollTitle.value.scrollLeft = e.target.offsetLeft - e.target.offsetWidth * 3
 }
 
 function coverCount(count: number) {
@@ -27,6 +28,13 @@ function coverCount(count: number) {
   } else {
     return count
   }
+}
+
+function toWatch() {
+  showToast({
+    message: '还没有实现~',
+    position: 'bottom',
+  });
 }
 
 </script>
@@ -57,12 +65,13 @@ function coverCount(count: number) {
 
     <!-- 视频区域 -->
     <div class="flex flex-row flex-wrap justify-evenly p-x-5 mt-40">
-      <div class="flex flex-col w-86 pt-4 pb-4" v-for="video_ in listData" :key="video_.aid">
+      <div class="flex flex-col w-86 pt-4 pb-4 shadow-lg rounded" @click="toWatch()" v-for="video_ in listData"
+        :key="video_.aid">
         <div class="w-full relative">
           <img class="w-full h-[194px] rounded" :src="video_.pic" referrerPolicy="no-referrer" alt="" />
 
           <div
-            class="absolute w-full bg-gray-800:20 filter left-0 bottom-0 pl-[12px] pr-[12px] pt-[10px] pb-[10px] text-white flex flex-row items-center justify-between">
+            class="absolute w-full bg-gray-800:20 filter left-0 bottom-0 p-2 text-white flex flex-row items-center justify-between">
             <div class="font-normal flex items-center">
               <span class="i-uiw:play-circle-o mr-2" color="white" style=""></span>
               <span>{{ coverCount(video_.stat.view) }}</span>
@@ -74,7 +83,7 @@ function coverCount(count: number) {
             </div>
           </div>
         </div>
-        <span class="mt-[12px] text-dark-50 text-2xl">{{ video_.title }}</span>
+        <span class="mt-3 text-dark-50 text-2xl m-x-2">{{ video_.title }}</span>
       </div>
     </div>
 

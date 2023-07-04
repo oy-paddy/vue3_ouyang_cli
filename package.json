@@ -6,6 +6,7 @@
     "dev": "vite --host 0.0.0.0 --mode dev",
     "product": "vite --host 0.0.0.0 --mode product",
     "build": "run-p type-check build-only --mode product",
+    "build:product": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",

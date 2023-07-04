@@ -30,6 +30,7 @@ const useVwModel = true
 console.log('vite.config.js-----------0');
 // https://vitejs.dev/config/
 export default defineConfig({
+  // base:'jh/mobile/',
   plugins: [
     vue(),
     vueJsx(),
