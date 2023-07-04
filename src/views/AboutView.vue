@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import selectDotIcon from '../assets/sign/select-dot-icon.png'
+import dotIcon from '../assets/sign/dot-icon.png'
 let signedId = ref(2)
 </script>
 
@@ -47,7 +49,7 @@ let signedId = ref(2)
 
               </div>
               <img class="circle-icon"
-                :src="signedId >= signScore.id ? parsePath('../assets/sign/select-dot-icon.png') : parsePath('../assets/sign/dot-icon.png')"
+                :src="signedId >= signScore.id ? selectDotIcon : dotIcon"
                 mode="" />
             </div>
 
