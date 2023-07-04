@@ -1,5 +1,5 @@
 import AutoImport from 'unplugin-auto-import/vite'
-import { VueUseComponentsResolver } from 'unplugin-vue-components/resolvers'
+import { VueUseComponentsResolver,VantResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 
 //自动导入插件
@@ -15,6 +15,7 @@ export default [
   Components({
     resolvers: [
       VueUseComponentsResolver(),
+      VantResolver(),
       //针对iconpark图标按需导入
       (componentName) => {
         if (componentName.startsWith('Icon')) {

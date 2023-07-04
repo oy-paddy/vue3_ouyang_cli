@@ -206,6 +206,31 @@ const loader_pxtovw = pxtovw({
 ## 19.4.按需导入
 - 安装：npm i unplugin-vue-components -D
 
-## 19.5.vant适配vw
->问题：因为设计稿是750，但是vant的设计稿是375，所以导致转换会有问题。[解决方案](https://juejin.cn/post/6961737808339795975)如下：
-- npm i vite-plugin-style-import -D
+
+
+# 20.引入vant
+- [安装参考](https://vant-ui.github.io/vant/#/zh-CN/tabbar)
+- vant适配vw问题：因为设计稿是750，但是vant的设计稿是375，所以导致转换会有问题。[解决方案](https://juejin.cn/post/6961737808339795975)如下： npm i vite-plugin-style-import -D
+- px转换为rem
+```
+//vite.config.js
+rootValue({ file }) {
+            return file.indexOf('vant') !== -1 ? 37.5 : 75;
+          }, 
+```
+
+- px转换为vw
+```
+npm install postcss-px2vp --save-dev
+
+//vite.config.js
+px2vp({
+          viewportWidth(rule) {
+            const file = rule.source?.input.file;
+            // 根据文件名动态配置viewport width
+            if (file?.includes('vant')) return 375;
+            return 750;
+          }
+})
+
+```
