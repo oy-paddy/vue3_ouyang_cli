@@ -29,7 +29,7 @@ let keyCodes = ref([
       </div>
       <div>
         <div class="flex justify-center gap-1 my-1 w-full mt-2" v-for="keys, idx in keyCodes" :key="idx">
-          <kbd class="px-2 min-w-0 min-h-1 kbd" v-for="key_ in keys" @click="clickCode" :key="key_">{{ key_ }}</kbd>
+          <kbd class="border shadow rounded px-2 py-1 min-w-0 min-h-1 sm:kbd" v-for="key_ in keys" @click="clickCode" :key="key_">{{ key_ }}</kbd>
         </div>
       </div>
 
@@ -38,13 +38,6 @@ let keyCodes = ref([
 </template>
 
 <style lang="scss" scoped>
-div {
-  h1 {
-    color: red;
-  }
-
-  .base-text {
-    color: blue;
-  }
+.sm2{
 }
 </style>
