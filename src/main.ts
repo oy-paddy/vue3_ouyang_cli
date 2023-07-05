@@ -1,5 +1,7 @@
 // 导入Unocss
 import 'uno.css'
+// 导入Unocss的TailwindCSS重置样式
+import '@unocss/reset/tailwind.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
