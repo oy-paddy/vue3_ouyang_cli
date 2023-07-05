@@ -7,11 +7,10 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 // 自动导入组件与函数
 import autoImport from './auto-import'
 
+// 引入Unocss
+import Unocss from 'unocss/vite';
 // 打包分析
 import { visualizer } from 'rollup-plugin-visualizer';
-
-// 导入Unocss
-import UnoCSS from 'unocss/vite'
 
 // 自动管理浏览器前缀
 import autoprefixer from 'autoprefixer'
@@ -35,8 +34,8 @@ export default defineConfig({
     vue(),
     vueJsx(),
     ...autoImport,
+    Unocss(),
     visualizer(),
-    UnoCSS(),
   ],
   resolve: {
     alias: {
