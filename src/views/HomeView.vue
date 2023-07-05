@@ -1,30 +1,32 @@
 <script setup lang="ts">
-import { publicData } from "@/composables/useData";
+import { myName } from '@/composables/useData'
+const router = useRouter()
+let dark = useDark()
+const toggleDark = useToggle(dark)
+const toAbout = () => router.push('/about')
 </script>
 
 <template>
-  <div>
-    <h1>首页</h1>
-    <h2 class="base-text">scss</h2>
-    <div class="center w-1/2 h-10 border 
-    border-solid border-cool-gray-400">
-      欢迎使用unocss
+  <div text="gray-700 dark:gray-200" flex="~ items-center justify-center col">
+    <div mt-20 class="center flex-col">
+      <div class="w-20 h-20 mb-2 i-my-icon:logo-test"></div>
+      <div italic class="font-bold">unocss框架 YYDS</div>
     </div>
-    <Hello></Hello>
-    <router-link to="/about">跳转到关于</router-link>
-    <button class="button" @click="publicData += 1">{{ publicData }} >>>+1</button>
-    <button btn>你好啊</button>
+
+    <div class="flex-(~ col items-center) mt-20">
+      <input v-model="myName" placeholder="你的名字" type="text" border="~ 1px solid gray-200 dark:gray-700"
+        class="w-[250px] mb-5 outline-(none active:none) p-2 rounded text-center bg-transparent">
+      <div>
+        <button btn w="auto" @click="toAbout()">确定</button>
+      </div>
+    </div>
+    <div center h-20>
+      <button @click="toggleDark()">
+        <div icon-btn i="carbon-sun dark:carbon-moon" />
+      </button>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-div {
-  h1 {
-    color: red;
-  }
-
-  .base-text {
-    color: blue;
-  }
-}
 </style>

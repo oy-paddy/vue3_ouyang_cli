@@ -459,6 +459,13 @@
   resolved "https://registry.npmmirror.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@iconify-json/carbon@^1.1.18":
+  version "1.1.18"
+  resolved "https://registry.npmmirror.com/@iconify-json/carbon/-/carbon-1.1.18.tgz#b371d73c5d9b05f1cbbfc86d93b1d877fb11c8c5"
+  integrity sha512-RbKET6KS9xUMeYVq1FUH3UUA7AYNcnApkHt2AccCwTWTQQs/O58ji4Of6z6PhRajGlbfvrJzT/Uqh19OKECRvA==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify-json/svg-spinners@^1.1.1":
   version "1.1.1"
   resolved "https://registry.npmmirror.com/@iconify-json/svg-spinners/-/svg-spinners-1.1.1.tgz"
@@ -480,7 +487,7 @@
 
 "@iconify/utils@^2.1.7":
   version "2.1.7"
-  resolved "https://registry.npmmirror.com/@iconify/utils/-/utils-2.1.7.tgz"
+  resolved "https://registry.npmmirror.com/@iconify/utils/-/utils-2.1.7.tgz#f6be175e08194925bf2cb091a8a3e36c88b8b636"
   integrity sha512-P8S3z/L1LcV4Qem9AoCfVAaTFGySEMzFEY4CHZLkfRj0Fv9LiR+AwjDgrDrzyI93U2L2mg9JHsbTJ52mF8suNw==
   dependencies:
     "@antfu/install-pkg" "^0.1.1"
@@ -879,12 +886,7 @@
     "@unocss/core" "0.53.4"
     "@unocss/preset-mini" "0.53.4"
 
-"@unocss/reset@0.53.4":
-  version "0.53.4"
-  resolved "https://registry.npmmirror.com/@unocss/reset/-/reset-0.53.4.tgz"
-  integrity sha512-NMqntd9CE9EpdtI2ELGCZg9Z2ySMdo/ljepP8QwfRmWbYaXUf3T/GJsOTqewbhNgJUGYinbs1OtiN0yG5xZjJQ==
-
-"@unocss/reset@^0.53.4":
+"@unocss/reset@0.53.4", "@unocss/reset@^0.53.4":
   version "0.53.4"
   resolved "https://registry.npmmirror.com/@unocss/reset/-/reset-0.53.4.tgz#8150ad45b383641e9aa4a0474d3d6f4844f5b9ce"
   integrity sha512-NMqntd9CE9EpdtI2ELGCZg9Z2ySMdo/ljepP8QwfRmWbYaXUf3T/GJsOTqewbhNgJUGYinbs1OtiN0yG5xZjJQ==

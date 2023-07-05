@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import { publicData } from "@/composables/useData";
+import { myName } from "@/composables/useData";
 </script>
 <template>
-  <div class="about">
-    <span>This is an about page</span>
-    <div>publicData={{ publicData }}</div>
+  <div class="center">
+    <input class="mt-20 text-center p-2" border="~ gray-200 dark:gray-700 rounded-full" outline="none" type="text" v-model="myName">
   </div>
 </template>
 
