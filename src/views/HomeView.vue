@@ -8,7 +8,7 @@ import { publicData } from "@/composables/useData";
     <h2 class="base-text">scss</h2>
     <div class="flex items-center justify-center w-1/2 h-10 border 
     border-solid border-cool-gray-400">
-      欢迎使用unocss
+      欢迎使用tailwindcss
     </div>
     <Hello></Hello>
     <router-link to="/about">跳转到关于</router-link>

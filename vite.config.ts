@@ -6,10 +6,6 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // 自动导入组件与函数
 import autoImport from './auto-import'
-
-// 引入Unocss
-import Unocss from 'unocss/vite';
-import { presetUno, presetAttributify, presetIcons } from 'unocss'
 // 打包分析
 import { visualizer } from 'rollup-plugin-visualizer';
 
@@ -19,14 +15,14 @@ export default defineConfig({
     vue(),
     vueJsx(),
     ...autoImport,
-    Unocss({ // 使用Unocss
-      presets: [
-        presetUno(),
-        presetAttributify(),
-        presetIcons()],
-    }),
     visualizer(),
   ],
+  // css: {
+  //   postcss: {
+  //     plugins: [
+  //     ]
+  //   }
+  // },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
