@@ -5,7 +5,7 @@ import Components from 'unplugin-vue-components/vite'
 //自动导入插件
 export default [
   AutoImport({
-    imports: ['vue', 'vue-router'],
+    imports: ['vue', 'vue-router','@vueuse/core'],
     //composables目录文件按需加载
     dirs: ['src/composables/**/*', 'src/stores/**/*'],
     dts: 'src/types/auto-imports.d.ts',
