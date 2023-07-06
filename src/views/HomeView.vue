@@ -14,7 +14,7 @@ const toAbout = () => router.push('/about')
     </div>
 
     <div class="flex-(~ col items-center) mt-20">
-      <input v-model="myName" placeholder="你的名字" type="text" border="~ 1px solid gray-200 dark:gray-700"
+      <input v-model="myName" placeholder="你的名字是?" type="text" border="~ 1px solid gray-200 dark:gray-700"
         class="w-[250px] mb-5 outline-(none active:none) p-2 rounded text-center bg-transparent">
       <div>
         <button btn w="auto" @click="toAbout()">确定</button>
