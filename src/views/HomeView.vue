@@ -11,6 +11,9 @@ const toAbout = () => router.push('/about')
     <div mt-20 class="center flex-col">
       <div class="w-20 h-20 mb-2 i-my-icon:logo-test"></div>
       <div italic class="font-bold">unocss框架 YYDS</div>
+      <div italic class="font-bold">unocss框架 YYDS</div>
+      <div italic class="font-bold">unocss框架 YYDS</div>
+      <div italic class="font-bold">unocss框架 YYDS</div>
     </div>
 
     <div class="flex-(~ col items-center) mt-20">
