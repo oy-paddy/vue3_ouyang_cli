@@ -18,7 +18,7 @@ import {
    */
   transformerVariantGroup,
 } from 'unocss'
-
+import transformerCompileClass from "@unocss/transformer-compile-class";
 // unocss 把自带的 rem 转换为 px
 import presetRemToPx from '@unocss/preset-rem-to-px'
 
@@ -44,10 +44,15 @@ export default defineConfig({
         mono: 'DM Mono',
       },
     }),
-    presetRemToPx(),
+    presetRemToPx({
+      baseFontSize:4
+    }),
   ],
   transformers: [
     transformerDirectives(),
+    transformerCompileClass({
+      classPrefix:'ouyang-'
+    }),
     transformerVariantGroup(),
   ],
   safelist: 'prose m-auto text-left'.split(' '),

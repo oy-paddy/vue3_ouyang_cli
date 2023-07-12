@@ -6,7 +6,7 @@ import '@unocss/reset/tailwind.css'
 // 引入vantui组件样式
 import 'vant/lib/index.css';
 // lib-flexible - 用于自动设置 rem 基准值
-import 'amfe-flexible'
+// import 'amfe-flexible'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
