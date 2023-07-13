@@ -3,7 +3,6 @@
 
 <template>
   <div>
-    <BiliBili></BiliBili>
   </div>
 </template>
 
