@@ -6,7 +6,8 @@ module.exports = {
   'extends': [
     'plugin:vue/vue3-essential',
     'eslint:recommended',
-    '@vue/eslint-config-typescript'
+    '@vue/eslint-config-typescript',
+    "@unocss",//添加unocss eslint规则
   ],
   parserOptions: {
     ecmaVersion: 'latest'
