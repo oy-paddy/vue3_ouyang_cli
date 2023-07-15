@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="w-full">
+  <div>
 
   </div>
 </template>
