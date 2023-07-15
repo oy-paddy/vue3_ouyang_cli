@@ -9,6 +9,7 @@
     "build:product": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
+    "deploy": "vite build && pm2 start deploy.sh",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
@@ -24,6 +25,7 @@
     "vue-router": "^4.2.2"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "^1.1.18",
     "@iconify-json/svg-spinners": "^1.1.1",
     "@iconify-json/typcn": "^1.1.4",
     "@rushstack/eslint-patch": "^1.2.0",
@@ -31,6 +33,7 @@
     "@types/jsdom": "^21.1.1",
     "@types/node": "^18.16.17",
     "@types/postcss-pxtorem": "^6.0.0",
+    "@unocss/eslint-config": "^0.53.5",
     "@unocss/preset-attributify": "^0.53.4",
     "@unocss/preset-icons": "^0.53.4",
     "@unocss/preset-rem-to-px": "^0.53.4",

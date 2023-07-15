@@ -1,7 +1,7 @@
 // 导入Unocss - 引入自动生成的样式
 import 'uno.css'
-
-// 导入样式重置 - 用于去除默认的浏览器样式
+import '@/assets/main.css'
+// 导入Unocss的TailwindCSS重置样式
 import '@unocss/reset/tailwind.css'
 // 引入vantui组件样式
 import 'vant/lib/index.css';
