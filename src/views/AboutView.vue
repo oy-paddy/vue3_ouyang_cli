@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <div>这是首页</div>
+    <div></div>
   </div>
 </template>
 
