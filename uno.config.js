@@ -1,6 +1,6 @@
 import {
   defineConfig,
-  // 属性化模式，属性冲突时，可以通过默认un-前缀来解决：<div m-2 rounded text-teal-400 >代替class</div> 
+  // 属性化模式，属性冲突时，可以通过默认un-前缀来解决：<div m-2 rounded text-teal-400 >代替class</div>
   presetAttributify,
   // 可以自定义图标转换
   presetIcons,
@@ -18,7 +18,8 @@ import {
    */
   transformerVariantGroup,
 } from 'unocss'
-import transformerCompileClass from "@unocss/transformer-compile-class";
+import transformerCompileClass from '@unocss/transformer-compile-class'
+
 // unocss 把自带的 rem 转换为 px
 import presetRemToPx from '@unocss/preset-rem-to-px'
 
@@ -55,14 +56,14 @@ export default defineConfig({
       },
     }),
     presetRemToPx({
-      baseFontSize:4
+      baseFontSize: 4,
     }),
   ],
   transformers: [
     // 指令：@apply等
     transformerDirectives(),
     transformerCompileClass({
-      classPrefix:'ouyang-'
+      classPrefix: 'ouyang-',
     }),
     transformerVariantGroup(),
   ],
