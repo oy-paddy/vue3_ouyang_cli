@@ -8,6 +8,7 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-typescript',
     "@unocss",//添加unocss eslint规则
+    "@antfu",
   ],
   parserOptions: {
     ecmaVersion: 'latest'

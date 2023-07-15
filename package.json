@@ -11,7 +11,8 @@
     "build-only": "vite build",
     "deploy": "vite build && pm2 start deploy.sh",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "@iconify-json/carbon": "^1.1.18",
@@ -25,6 +26,7 @@
     "vue-router": "^4.2.2"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.39.7",
     "@iconify-json/carbon": "^1.1.18",
     "@iconify-json/svg-spinners": "^1.1.1",
     "@iconify-json/typcn": "^1.1.4",
@@ -41,7 +43,7 @@
     "@vue/tsconfig": "^0.4.0",
     "amfe-flexible": "^2.2.1",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.39.0",
+    "eslint": "^8.45.0",
     "eslint-plugin-vue": "^9.11.0",
     "node-sass": "^9.0.0",
     "npm-run-all": "^4.1.5",
